@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1 hometask JS</title>
+</head>
+<body>
+    <script>
+        //    1 TASK
+        let answ = false;
+        do {
+            let name = prompt("Your full name:");
+            let gender = prompt("Your full gender:");
+            let age = prompt("Your full age:");
+            let mail = prompt("Your full e-mail:");
+            answ = confirm("Name: " + name + "\nGender: " + gender + "\nAge: " + age + "\nE-mail: " + mail + "\n\nIs all right?");
+        } while (answ == false);
+        alert("Thank you for answers!");
+
+
+
+        //    2 TASK
+        /* let ticket = prompt("Your ticket:");
+        let sum1 = parseInt(ticket[0]) + parseInt(ticket[1]) + parseInt(ticket[2]);
+        let sum2 = parseInt(ticket[3]) + parseInt(ticket[4]) + parseInt(ticket[5]);
+        if (sum1 == sum2) {
+            alert("It is a HAPPY ticket!");
+        } else {
+            alert("It is not a happy ticket:(");
+        } */
+
+
+
+        //     3 TASK
+        /* let n = 50;
+        let min = 1;
+        let max = 100;
+        alert("Order a number 1-100!");
+        while (confirm("Is your number: " + n) == false) {
+            let guess = prompt("Is your number: \n1. > " + n + "\n2. < " + n);
+
+            if (guess == '1') {
+                min = n;
+                n += (max - n) / 2;
+            }
+            else {
+                max = n;
+                n -= (n - min) / 2;
+            }
+            n = parseInt(n);
+        } */
+
+
+    </script>
+</body>
+</html>
