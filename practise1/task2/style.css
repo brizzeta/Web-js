@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+table {
+    border-spacing: 0;
+    border: 2px solid black;
+    width: 500px;
+}
+
+th {
+    background-color: aquamarine;
+    border: 2px solid black;
+    padding: 10px;
+}
+
+td {
+    background-color: rgb(56, 127, 104);
+    color: white;
+    display: none;
+}
