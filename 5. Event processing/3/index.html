@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3</title>
+    <style>
+        #resizableBlock {
+            position: relative;
+            border: 1px solid black;
+            width: 300px;
+            height: 200px;
+            overflow: auto;
+        }
+        #resizeHandle {
+            width: 0;
+            height: 0;
+            border-bottom: 10px solid blue;
+            border-left: 10px solid transparent;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            cursor: nwse-resize;
+        }
+    </style>
+</head>
+<body>
+    <div id="resizableBlock" contenteditable="true">
+        <p>Можно редактировать текст...</p>
+        <div id="resizeHandle"></div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
