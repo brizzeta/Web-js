@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+    margin: 0;
+}
+
+.gallery {
+    text-align: center;
+}
+
+.seasons {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.seasons img {
+    width: 100px;
+    height: 100px;
+    margin: 0 10px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.seasons img:hover {
+    transform: scale(1.1);
+}
+
+.fullsize img {
+    width: 500px;
+    height: auto;
+}
