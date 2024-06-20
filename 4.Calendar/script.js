@@ -1,53 +1,74 @@
-/* const input = document.querySelector("input");
-let inputDate;
+document.addEventListener('DOMContentLoaded', () => {
+    const calendarContainer = document.querySelector('#calendar tbody');
+    const datePicker = document.getElementById('date-picker');
 
-Date.prototype.daysInMonth = function() {
-    return 33 - new Date(this.getFullYear(), this.getMonth(), 33).getDate();
-};
+    const currentDate = new Date();
+    generateCalendar(currentDate);
 
-input.addEventListener('change', function(event) {
-    let inputDate = event.target.value;
-    const date = new Date(inputDate)
-    const getFisrtDay = new Date(date.getFullYear(), date.getMonth(), 1).getDay()
+    datePicker.addEventListener('change', (event) => {
+        const selectedDate = new Date(event.target.value);
+        generateCalendar(selectedDate);
+    });
 
-    let d = 1;
+    function generateCalendar(date) {
+        calendarContainer.innerHTML = '';
+        const year = date.getFullYear();
+        const month = date.getMonth();
 
-    
-});
+        const firstDayOfMonth = new Date(year, month, 1).getDay();
+        const lastDateOfMonth = new Date(year, month + 1, 0).getDate();
+        const lastDayOfLastMonth = new Date(year, month, 0).getDate();
 
+        const today = new Date();
+        const isCurrentMonth = today.getFullYear() === year && today.getMonth() === month;
 
- */
-function generateCalendar() {
-    var dateInput = document.getElementById("trip-start").value;
-    var date = new Date(dateInput);
-    var year = date.getFullYear();
-    var month = date.getMonth();
-    var daysInMonth = new Date(year, month + 1, 0).getDate();
+        // Set background image according to season
+        setSeasonBackground(month);
 
-    var calendarHTML = "<h2>" + date.toLocaleDateString('default', { month: 'long' }) + " " + year + "</h2>";
-    calendarHTML += "<table>";
-    calendarHTML += "<tr><th>Пн</th><th>Вт</th><th>Ср</th><th>Чт</th><th>Пт</th><th>Сб</th><th>Вс</th></tr>";
+        let dayCounter = 1;
+        let previousMonthDayCounter = lastDayOfLastMonth - (firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1) + 1;
 
-    var firstDayOfWeek = new Date(year, month, 1).getDay();
-    calendarHTML += "<tr>";
-    for (var i = 0; i < firstDayOfWeek; i++) {
-        calendarHTML += "<td></td>";
-    }
+        let row = document.createElement('tr');
 
-    for (var day = 1; day <= daysInMonth; day++) {
-        calendarHTML += "<td>" + day + "</td>";
-        if ((day + firstDayOfWeek) % 7 === 0) {
-            calendarHTML += "</tr><tr>";
+        // Fill previous month's days
+        for (let i = 0; i < (firstDayOfMonth === 0 ? 6 : firstDayOfMonth - 1); i++) {
+            const dayCell = document.createElement('td');
+            dayCell.textContent = previousMonthDayCounter++;
+            dayCell.classList.add('outside-month');
+            row.appendChild(dayCell);
         }
+
+        // Fill current month's days
+        for (let i = 1; i <= lastDateOfMonth; i++) {
+            if (row.children.length === 7) {
+                calendarContainer.appendChild(row);
+                row = document.createElement('tr');
+            }
+            const dayCell = document.createElement('td');
+            dayCell.textContent = i;
+            if (isCurrentMonth && i === today.getDate()) {
+                dayCell.classList.add('today');
+            }
+            if (i === date.getDate()) {
+                dayCell.classList.add('selected-day');
+            }
+            row.appendChild(dayCell);
+        }
+
+        // Fill next month's days
+        let nextMonthDayCounter = 1;
+        while (row.children.length < 7) {
+            const dayCell = document.createElement('td');
+            dayCell.textContent = nextMonthDayCounter++;
+            dayCell.classList.add('outside-month');
+            row.appendChild(dayCell);
+        }
+
+        calendarContainer.appendChild(row);
     }
 
-    calendarHTML += "</tr>";
-    calendarHTML += "</table>";
-
-    document.getElementById("calendar").innerHTML = calendarHTML;
-}
-
-document.addEventListener("DOMContentLoaded", function() {
-    document.getElementById("trip-start").addEventListener("input", generateCalendar);
-    generateCalendar();
+    function setSeasonBackground(month) {
+        const seasons = ['winter', 'winter', 'spring', 'spring', 'spring', 'summer', 'summer', 'summer', 'autumn', 'autumn', 'autumn', 'winter'];
+        document.body.className = seasons[month];
+    }
 });

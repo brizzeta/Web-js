@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ExtendedDate Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+    <script>
+        class ExtendedDate extends Date {
+            constructor(year, month, day) {
+                super(year, month - 1, day); // Месяцы в Date начинаются с 0, поэтому вычитаем 1
+            }
+
+            // Метод для вывода даты (числа и месяца) текстом
+            toText() {
+                const months = [
+                    'January', 'February', 'March', 'April', 'May', 'June',
+                    'July', 'August', 'September', 'October', 'November', 'December'
+                ];
+                return `${this.getDate()} ${months[this.getMonth()]}`;
+            }
+
+            // Метод для проверки – это прошедшая дата или будущая
+            isFuture() {
+                const now = new Date();
+                return this >= now;
+            }
+
+            // Метод для проверки – високосный год или нет
+            isLeapYear() {
+                const year = this.getFullYear();
+                return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+            }
+
+            // Метод, возвращающий следующую дату
+            nextDate() {
+                const nextDay = new Date(this);
+                nextDay.setDate(this.getDate() + 1);
+                return nextDay;
+            }
+        }
+
+        function getDateFromInput() {
+            const year = parseInt(document.getElementById('year').value);
+            const month = parseInt(document.getElementById('month').value);
+            const day = parseInt(document.getElementById('day').value);
+            return new ExtendedDate(year, month, day);
+        }
+
+        function displayResult(result) {
+            document.getElementById('result').textContent = result;
+        }
+
+        function showTextDate() {
+            const date = getDateFromInput();
+            displayResult(`Дата текстом: ${date.toText()}`);
+        }
+
+        function checkFutureDate() {
+            const date = getDateFromInput();
+            displayResult(`Будущая дата?: ${date.isFuture()}`);
+        }
+
+        function checkLeapYear() {
+            const date = getDateFromInput();
+            displayResult(`Високосный год?: ${date.isLeapYear()}`);
+        }
+
+        function showNextDate() {
+            const date = getDateFromInput();
+            displayResult(`Следующая дата: ${date.nextDate().toDateString()}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>ExtendedDate Example</h1>
+    <div>
+        <label for="year">Год:</label>
+        <input type="number" id="year" required>
+    </div>
+    <div>
+        <label for="month">Месяц:</label>
+        <input type="number" id="month" min="1" max="12" required>
+    </div>
+    <div>
+        <label for="day">День:</label>
+        <input type="number" id="day" min="1" max="31" required>
+    </div>
+    <div>
+        <button onclick="showTextDate()">Вывести дату текстом</button>
+        <button onclick="checkFutureDate()">Проверить, будущая ли это дата</button>
+        <button onclick="checkLeapYear()">Проверить, високосный ли это год</button>
+        <button onclick="showNextDate()">Показать следующую дату</button>
+    </div>
+    <div class="result" id="result"></div>
+</body>
+</html>

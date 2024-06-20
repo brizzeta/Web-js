@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form class="user-info-form">
+        <h3>Hello, @!</h3>
+        <h2>User Info</h2>
+        <div class="main-form">
+            <div class="individual">
+                <div class="form-text">
+                    <span class="input-span">First Name:</span><span class="warning-span" id="firstNameWarning">Wrong name!</span>
+                </div>
+                <input class='input-field' type="text" placeholder="Name">
+                <div class="form-text">
+                    <span class="input-span">Year of Birth:</span><span class="warning-span" id="birthYearWarning">Wrong year!</span>
+                </div>
+                <input class='input-field' type="number" placeholder="yyyy">
+                <div class="form-text">
+                    <span class="input-span">Phone Number:</span><span class="warning-span" id="phoneNumberWarning">Wrong phone!</span>
+                </div>
+                <input class='input-field' type="number" placeholder="+0000000000">
+            </div>
+            <div class="individual">
+                <div class="form-text">
+                    <span class="input-span">Last Name:</span><span class="warning-span" id="lastNameWarning">Wrong last name!</span>
+                </div>
+                <input class='input-field' type="text" placeholder="Last Name">
+                <div class="form-text">
+                    <span class="input-span">Gender:</span>
+                </div>
+                <select class='input-field' id="genderSelect" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+                <div class="form-text">
+                    <span class="input-span">Skype:</span>
+                </div>
+                <input class='input-field' type="text" placeholder="Skype">
+            </div>
+        </div>
+        <input class="submit-button2" type="button" value="Save">
+        <a class="exit-link" id="exitLink">exit</a>
+    </form>
+    <script src="script2.js"></script>    
+</body>
+</html>

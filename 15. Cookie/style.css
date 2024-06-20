@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin: 0;
+}
+
+.custom-form {
+    width: 400px;
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.custom-table th {
+    font-size: 1.2em;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.custom-table td {
+    padding: 10px;
+}
+
+.custom-input, .custom-textarea, .custom-select {
+    width: calc(100% - 22px);
+    padding: 8px;
+    margin: 5px 0;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.custom-textarea {
+    resize: vertical;
+}
+
+.custom-button, .custom-reset {
+    padding: 10px 20px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 48%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.custom-button {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.custom-reset {
+    background-color: #f44336;
+    color: white;
+}
+
+.custom-button:hover {
+    background-color: #45a049;
+}
+
+.custom-reset:hover {
+    background-color: #e53935;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    margin: 0 5px 0 0;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 10px 0;
+}

@@ -1,0 +1,73 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.game-container {
+    max-width: 300px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.game-board {
+    height: 300px;
+    width: 300px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: auto;
+    border: 2px solid #ccc;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.cell {
+    height: 25%;
+    width: 25%;
+    font-size: 24px;
+    background-color: #ffcc99;
+    border: 1px solid #999;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.cell:hover {
+    background-color: #ffbf7f;
+}
+
+.empty {
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.retry-btn {
+    width: 50%;
+    height: 40px;
+    margin: 20px auto;
+    border: 1px solid #999;
+    border-radius: 20px;
+    background-color: #ffcc99;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.retry-btn:hover {
+    background-color: #ffbf7f;
+    color: #fff;
+}
+
+.retry-btn:active {
+    background-color: #ffa64d;
+}
+
+.box {
+    margin-top: 20px;
+    text-align: center;
+}

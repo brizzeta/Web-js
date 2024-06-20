@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style1.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form class="custom-form">
+        <input class="custom-input" type="number" id="lengthInput" placeholder="Введите длину строки" min="1">
+        <p class="custom-text">Из каких символов должна состоять строка?</p>
+        <label>
+            <input class="custom-checkbox" type="checkbox" name="option" value="numbers"> Числа (0-9)<br>
+            <input class="custom-checkbox" type="checkbox" name="option" value="uppercase"> Заглавные буквы (A-Z)<br>
+            <input class="custom-checkbox" type="checkbox" name="option" value="lowercase"> Строчные буквы (a-z)
+        </label><br>
+        <input class="custom-button" type="button" value="Сгенерировать">
+        <br>
+        <input class="custom-output" type="text" readonly>
+    </form>
+    <script src="script1.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+#calendar-container {
+    width: 350px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#calendar {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#calendar th, #calendar td {
+    width: 14.28%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.today {
+    background-color: yellow;
+}
+
+.outside-month {
+    background-color: #eee;
+}
+
+.selected-day {
+    background-color: lightblue;
+}
+
+.winter {
+    background-image: url('winter.jpg');
+    background-size: cover;
+}
+
+.spring {
+    background-image: url('spring.jpg');
+    background-size: cover;
+}
+
+.summer {
+    background-image: url('summer.jpg');
+    background-size: cover;
+}
+
+.autumn {
+    background-image: url('autumn.jpg');
+    background-size: cover;
+}
