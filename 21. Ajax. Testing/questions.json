@@ -1,0 +1,27 @@
+[
+    {
+        "question": "What is the capital of France?",
+        "choices": ["Paris", "London", "Berlin", "Madrid"],
+        "correctAnswer": "Paris"
+    },
+    {
+        "question": "What is the capital of Japan?",
+        "choices": ["Tokyo", "Kyoto", "Osaka", "Nagoya"],
+        "correctAnswer": "Tokyo"
+    },
+    {
+        "question": "What is the capital of Canada?",
+        "choices": ["Ottawa", "Toronto", "Vancouver", "Montreal"],
+        "correctAnswer": "Ottawa"
+    },
+    {
+        "question": "What is the capital of Australia?",
+        "choices": ["Sydney", "Melbourne", "Canberra", "Brisbane"],
+        "correctAnswer": "Canberra"
+    },
+    {
+        "question": "What is the capital of Brazil?",
+        "choices": ["Rio de Janeiro", "São Paulo", "Brasília", "Salvador"],
+        "correctAnswer": "Brasília"
+    }
+]
